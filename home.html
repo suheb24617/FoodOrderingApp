@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطعم البحر الأزرق - الصفحة الرئيسية</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- شريط ترحيبي -->
+  <div class="welcome-bar">
+    🌟 مرحباً بكم في مطعم البحر الأزرق - أشهى المأكولات البحرية الطازجة 🐟
+  </div>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo">
+        <div class="logo-icon">🐟</div>
+        <div>
+          <span class="logo-text">البحر الأزرق</span>
+          <span class="logo-sub">Blue Sea Restaurant</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="home.html" class="active">🏠 الرئيسية</a></li>
+          <li><a href="AboutUs.html">👥 من نحن</a></li>
+          <li><a href="Meals.html">🍽️ الوجبات</a></li>
+          <li><a href="home.html" class="exit-btn" onclick="exitSite(); return false;">🚪 خروج</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- قسم الهيرو -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🌊 مطعم مأكولات بحرية متميز</div>
+      <h1>مطعم البحر الأزرق</h1>
+      <p>نقدم لكم أشهى وأطازج المأكولات البحرية المختارة بعناية فائقة<br/>من أعماق البحار مباشرةً إلى مائدتكم</p>
+    </div>
+  </section>
+
+  <!-- قسم أعضاء المجموعة + رابط النشر + الملاحظات -->
+  <div style="background:#f4f6f7; padding: 70px 0;">
+    <div class="section" style="padding-top:0; padding-bottom:0;">
+
+      <!-- عنوان القسم -->
+      <div class="section-title">
+        <h2>👨‍💻 فريق العمل</h2>
+        <p>أعضاء المجموعة المشاركون في إنجاز هذا المشروع</p>
+      </div>
+
+      <!-- جدول الطلاب -->
+      <table class="team-table">
+        <thead>
+          <tr>
+            <th style="width:50px;">#</th>
+            <th>الأيقونة</th>
+            <th>الاسم الكامل (عربي)</th>
+            <th>Full Name (English)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="team-row" onmouseenter="hoverRow(this,true)" onmouseleave="hoverRow(this,false)">
+            <td><span class="member-num">1</span></td>
+            <td><span class="member-avatar" title="عضو المجموعة">🧑‍🎓</span></td>
+            <td class="name-ar">محمد صهيب مازن علي</td>
+            <td class="name-en">Mohammad Suhayb Mazen Ali</td>
+          </tr>
+          <tr class="team-row" onmouseenter="hoverRow(this,true)" onmouseleave="hoverRow(this,false)">
+            <td><span class="member-num">2</span></td>
+            <td><span class="member-avatar" title="عضو المجموعة">🧑‍🎓</span></td>
+            <td class="name-ar">ملاذ محمد بشير فواز</td>
+            <td class="name-en">Malath Mohammad Bashir Fawaz</td>
+          </tr>
+          <tr class="team-row" onmouseenter="hoverRow(this,true)" onmouseleave="hoverRow(this,false)">
+            <td><span class="member-num">3</span></td>
+            <td><span class="member-avatar" title="عضوة المجموعة">👩‍🎓</span></td>
+            <td class="name-ar">سدرا فصيح الخلف</td>
+            <td class="name-en">Sidra Fasih Al-Khalaf</td>
+          </tr>
+          <tr class="team-row" onmouseenter="hoverRow(this,true)" onmouseleave="hoverRow(this,false)">
+            <td><span class="member-num">4</span></td>
+            <td><span class="member-avatar" title="عضوة المجموعة">👩‍🎓</span></td>
+            <td class="name-ar">ليلاس أحمد بدر</td>
+            <td class="name-en">Laylas Ahmad Badr</td>
+          </tr>
+          <tr class="team-row" onmouseenter="hoverRow(this,true)" onmouseleave="hoverRow(this,false)">
+            <td><span class="member-num">5</span></td>
+            <td><span class="member-avatar" title="عضو المجموعة">🧑‍🎓</span></td>
+            <td class="name-ar">محمد علاء سنبل</td>
+            <td class="name-en">Mohammad Alaa Sunbol</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- رابط النشر -->
+      <div class="info-card-block" style="border-right:5px solid #27ae60; margin-top:35px;">
+        <div class="info-card-header">
+          <span class="info-card-icon" style="background:linear-gradient(135deg,#27ae60,#1e8449);">🌐</span>
+          <h3 style="color:#27ae60; margin:0;">رابط النشر على الإنترنت</h3>
+        </div>
+        <a href="https://blue-sea-restaurant.netlify.app" target="_blank" class="publish-link">
+          <span class="link-icon">🔗</span>
+          https://blue-sea-restaurant.netlify.app
+          <span class="link-badge">زيارة الموقع ↗</span>
+        </a>
+      </div>
+
+      <!-- ملاحظات -->
+      <div class="info-card-block" style="border-right:5px solid #f39c12; margin-top:20px;">
+        <div class="info-card-header">
+          <span class="info-card-icon" style="background:linear-gradient(135deg,#f39c12,#e67e22);">📝</span>
+          <h3 style="color:#f39c12; margin:0;">ملاحظات</h3>
+        </div>
+        <ul class="notes-list">
+          <li><span class="note-icon">💻</span> تم تطوير هذا الموقع بالكامل باستخدام HTML, CSS, وJavaScript مع jQuery</li>
+          <li><span class="note-icon">🌍</span> الموقع يدعم اللغة العربية بالكامل مع واجهة RTL</li>
+          <li><span class="note-icon">✅</span> تم تطبيق جميع عمليات التحقق المطلوبة في صفحة الوجبات</li>
+          <li><span class="note-icon">💰</span> يتم حساب ضريبة 5% وطرحها من المجموع النهائي</li>
+          <li><span class="note-icon">📁</span> تم استخدام ملف CSS واحد (style.css) وملف JS واحد (myFunctions.js)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- أنماط إضافية خاصة بهذه الصفحة -->
+  <style>
+    /* صف الطالب */
+    .team-row { transition: all 0.25s ease; cursor: default; }
+    .team-row.hovered { background: #fff8f8 !important; transform: scale(1.01); box-shadow: 0 4px 16px rgba(192,57,43,0.1); }
+
+    /* رقم العضو */
+    .member-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #c0392b, #922b21);
+      color: #fff; border-radius: 50%;
+      font-weight: 700; font-size: 0.9rem;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    /* أيقونة الطالب */
+    .member-avatar {
+      font-size: 1.9rem;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .team-row.hovered .member-avatar { transform: scale(1.3) rotate(-8deg); }
+
+    /* اسم عربي */
+    .name-ar {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a1a2e;
+      font-family: 'Cairo', sans-serif;
+      letter-spacing: 0.3px;
+    }
+
+    /* اسم إنجليزي */
+    .name-en {
+      font-size: 0.9rem;
+      color: #555;
+      font-family: 'Cairo', sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* بطاقة معلومات عامة */
+    .info-card-block {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .info-card-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    /* رابط النشر */
+    .publish-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #2980b9;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 18px;
+      background: #eaf4fb;
+      border-radius: 10px;
+      border: 1px dashed #aed6f1;
+      transition: all 0.25s ease;
+      font-family: 'Cairo', sans-serif;
+    }
+    .publish-link:hover {
+      background: #2980b9;
+      color: #fff;
+      border-color: #2980b9;
+      transform: translateX(-4px);
+      box-shadow: 0 4px 14px rgba(41,128,185,0.35);
+    }
+    .link-icon { font-size: 1.2rem; }
+    .link-badge {
+      margin-right: auto;
+      background: #27ae60;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .publish-link:hover .link-badge { background: rgba(255,255,255,0.25); }
+
+    /* قائمة الملاحظات */
+    .notes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .notes-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-family: 'Cairo', sans-serif;
+      color: #2c3e50;
+      padding: 10px 14px;
+      background: #fffdf5;
+      border-radius: 8px;
+      border: 1px solid #fdeec8;
+      transition: background 0.2s;
+    }
+    .notes-list li:hover { background: #fef5d9; }
+    .note-icon { font-size: 1.2rem; flex-shrink: 0; }
+  </style>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>🐟 البحر الأزرق</h4>
+        <p>مطعم متخصص في المأكولات البحرية الطازجة</p>
+        <p>جودة لا تضاهى منذ 2010</p>
+      </div>
+      <div>
+        <h4>🔗 روابط سريعة</h4>
+        <a href="home.html">الصفحة الرئيسية</a>
+        <a href="AboutUs.html">من نحن</a>
+        <a href="Meals.html">قائمة الوجبات</a>
+      </div>
+      <div>
+        <h4>📞 تواصل معنا</h4>
+        <p>📱 0911234567</p>
+        <p>📧 info@bluesea.sy</p>
+        <p>📍 دمشق، شارع الميدان</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 مطعم البحر الأزرق - جميع الحقوق محفوظة | تم التطوير بواسطة فريق CS-301</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script src="myFunctions.js"></script>
+</body>
+</html>

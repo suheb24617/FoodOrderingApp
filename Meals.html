@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطعم البحر الأزرق - قائمة الوجبات</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- شريط ترحيبي -->
+  <div class="welcome-bar">
+    🌟 مرحباً بكم في مطعم البحر الأزرق - أشهى المأكولات البحرية الطازجة 🐟
+  </div>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo">
+        <div class="logo-icon">🐟</div>
+        <div>
+          <span class="logo-text">البحر الأزرق</span>
+          <span class="logo-sub">Blue Sea Restaurant</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="home.html">🏠 الرئيسية</a></li>
+          <li><a href="AboutUs.html">👥 من نحن</a></li>
+          <li><a href="Meals.html" class="active">🍽️ الوجبات</a></li>
+          <li><a href="home.html" class="exit-btn" onclick="exitSite(); return false;">🚪 خروج</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- هيرو الصفحة -->
+  <div class="page-hero">
+    <h1>🍽️ قائمة الوجبات</h1>
+    <p>اختر من بين أشهى أطباقنا البحرية المتنوعة المُعدة يومياً بأطازج المكونات</p>
+  </div>
+
+  <!-- قسم الوجبات -->
+  <div class="section">
+    <div class="section-title">
+      <h2>🐟 أطباقنا المميزة</h2>
+      <p>اختر الوجبات التي تريدها ثم اضغط "متابعة" لإتمام طلبك</p>
+    </div>
+
+    <!-- جدول الوجبات -->
+    <div class="meals-table-container">
+      <table class="meals-table" id="meals-table">
+        <thead>
+          <tr>
+            <th>الاختيار</th>
+            <th>الرمز</th>
+            <th>صورة</th>
+            <th>الوجبة</th>
+            <th>السعر</th>
+            <th>إظهار التفاصيل</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- ===== وجبة 1 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-001" data-name="وجبة سمك بوري مشوي لشخصين" data-price="110000" /></td>
+            <td><span class="meal-code">SF-001</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=120&q=60" class="meal-image" alt="سمك بوري مشوي" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🐟</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">وجبة سمك بوري مشوي لشخصين</td>
+            <td><span class="meal-price">110,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-001" onclick="toggleDetails('SF-001')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 1 -->
+          <tr class="meal-details-row" id="details-SF-001">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">وجبة سمك بوري مشوي لشخصين</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">المصري</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">مأكولات بحرية</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">35 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المكونات:</div>
+                  <ul class="ingredients-list">
+                    <li>4 سمكات بوري أحمر، مغسولة ومنظفة</li>
+                    <li>بضعة أوراق من الأوريجانو الطازج، مقطعة</li>
+                    <li>1 ملعقة صغيرة من ملح الطعام</li>
+                    <li>1 ملعقة صغيرة من الفلفل الأسود المطحون</li>
+                    <li><strong>الصلصة:</strong></li>
+                    <li>1 ملعقة كبيرة من زيت الزيتون</li>
+                    <li>3 فصوص ثوم مقشرة ومقطعة بشكل ناعم</li>
+                    <li>1 حبة فلفل أحمر طازج، منزوعة البذور ومقطعة إلى شرائح رفيعة</li>
+                    <li>بضعة أغصان من إكليل الجبل الطازجة</li>
+                    <li>6 حبات طماطم طرية، مفرومة</li>
+                    <li>1/2 ليمونة معصورة</li>
+                    <li>ضمة صغيرة من البقدونس الطازج المفروم</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===== وجبة 2 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-002" data-name="جمبري بالثوم والزبدة" data-price="145000" /></td>
+            <td><span class="meal-code">SF-002</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=120&q=60" class="meal-image" alt="جمبري" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🦐</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">جمبري بالثوم والزبدة</td>
+            <td><span class="meal-price">145,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-002" onclick="toggleDetails('SF-002')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 2 -->
+          <tr class="meal-details-row" id="details-SF-002">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">جمبري بالثوم والزبدة</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">البحر المتوسط</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">مأكولات بحرية - جمبري</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">25 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المكونات:</div>
+                  <ul class="ingredients-list">
+                    <li>500 غرام جمبري طازج كبير الحجم مقشر</li>
+                    <li>4 ملاعق كبيرة زبدة غير مملحة</li>
+                    <li>6 فصوص ثوم مفرومة بشكل ناعم</li>
+                    <li>1/4 كوب نبيذ أبيض أو مرق دجاج</li>
+                    <li>عصير نصف ليمونة</li>
+                    <li>ملح وفلفل أسود حسب الرغبة</li>
+                    <li>بقدونس طازج مفروم للتزيين</li>
+                    <li>رشة فلفل أحمر حار اختياري</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===== وجبة 3 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-003" data-name="سمك قاروص بالليمون والأعشاب" data-price="135000" /></td>
+            <td><span class="meal-code">SF-003</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=120&q=60" class="meal-image" alt="سمك قاروص" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🐟</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">سمك قاروص بالليمون والأعشاب</td>
+            <td><span class="meal-price">135,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-003" onclick="toggleDetails('SF-003')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 3 -->
+          <tr class="meal-details-row" id="details-SF-003">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">سمك قاروص بالليمون والأعشاب</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">الإيطالي</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">مأكولات بحرية - أسماك مشوية</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">40 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المكونات:</div>
+                  <ul class="ingredients-list">
+                    <li>1 سمكة قاروص كبيرة (800 غرام تقريباً)</li>
+                    <li>2 ليمونة مقطعة شرائح</li>
+                    <li>أغصان روزماري وزعتر طازج</li>
+                    <li>3 فصوص ثوم مقطعة</li>
+                    <li>3 ملاعق زيت زيتون بكر ممتاز</li>
+                    <li>ملح بحري وفلفل أبيض</li>
+                    <li>كبر (قبار) لإضافة حموضة خفيفة</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===== وجبة 4 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-004" data-name="حبار مقلي محشو بالجبنة" data-price="125000" /></td>
+            <td><span class="meal-code">SF-004</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=120&q=60" class="meal-image" alt="حبار" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🦑</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">حبار مقلي محشو بالجبنة</td>
+            <td><span class="meal-price">125,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-004" onclick="toggleDetails('SF-004')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 4 -->
+          <tr class="meal-details-row" id="details-SF-004">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">حبار مقلي محشو بالجبنة</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">الإسباني</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">مأكولات بحرية - حبار</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">30 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المكونات:</div>
+                  <ul class="ingredients-list">
+                    <li>500 غرام حبار طازج كبير مع الأرجل</li>
+                    <li>200 غرام جبنة موزاريلا مبشورة</li>
+                    <li>1 حبة طماطم مفرومة ناعماً</li>
+                    <li>2 فص ثوم مفروم</li>
+                    <li>بقدونس طازج مفروم</li>
+                    <li>دقيق للتقليب</li>
+                    <li>زيت للقلي</li>
+                    <li>ملح وفلفل حسب الرغبة</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===== وجبة 5 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-005" data-name="سلطعون بخار مع صلصة الزبدة" data-price="180000" /></td>
+            <td><span class="meal-code">SF-005</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=120&q=60" class="meal-image" alt="سرطان بحر" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🦀</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">سلطعون بخار مع صلصة الزبدة</td>
+            <td><span class="meal-price">180,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-005" onclick="toggleDetails('SF-005')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 5 -->
+          <tr class="meal-details-row" id="details-SF-005">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">سلطعون بخار مع صلصة الزبدة</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">الآسيوي</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">مأكولات بحرية - محار وقشريات</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">50 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المكونات:</div>
+                  <ul class="ingredients-list">
+                    <li>سلطعون طازج متوسط إلى كبير الحجم (800-1000 غرام)</li>
+                    <li>ماء وملح بحري للطهو بالبخار</li>
+                    <li>شرائح زنجبيل طازج</li>
+                    <li>صلصة الزبدة: 3 ملاعق زبدة، ثوم، ليمون، أعشاب</li>
+                    <li>صلصة الصويا الخفيفة</li>
+                    <li>كزبرة طازجة للتزيين</li>
+                    <li>ليمون مقطع للتقديم</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===== وجبة 6 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-006" data-name="أخطبوط مشوي مع خضروات" data-price="160000" /></td>
+            <td><span class="meal-code">SF-006</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=120&q=60" class="meal-image" alt="أخطبوط" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🐙</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">أخطبوط مشوي مع خضروات</td>
+            <td><span class="meal-price">160,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-006" onclick="toggleDetails('SF-006')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 6 -->
+          <tr class="meal-details-row" id="details-SF-006">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">أخطبوط مشوي مع خضروات</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">اليوناني</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">مأكولات بحرية - رخويات</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">60 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المكونات:</div>
+                  <ul class="ingredients-list">
+                    <li>1 أخطبوط طازج (1-1.5 كغ) منظف</li>
+                    <li>فلفل ألوان مقطع شرائح</li>
+                    <li>كوسا وباذنجان مقطع</li>
+                    <li>زيت زيتون بكر ممتاز</li>
+                    <li>ثوم وليمون وأعشاب بروفانسالية</li>
+                    <li>خل بلسمي للرش عند التقديم</li>
+                    <li>ملح بحري وفلفل أسود</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===== وجبة 7 ===== -->
+          <tr>
+            <td><input type="checkbox" class="meal-checkbox" data-id="SF-007" data-name="مأكولات بحرية مشكلة للعائلة" data-price="250000" /></td>
+            <td><span class="meal-code">SF-007</span></td>
+            <td>
+              <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=120&q=60" class="meal-image" alt="مأكولات بحرية مشكلة" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;80&quot; height=&quot;60&quot; viewBox=&quot;0 0 80 60&quot;><rect fill=&quot;%23f0f0f0&quot; width=&quot;80&quot; height=&quot;60&quot; rx=&quot;8&quot;/><text x=&quot;40&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-size=&quot;24&quot;>🍱</text></svg>'"/>
+            </td>
+            <td style="text-align:right; font-weight:600;">مأكولات بحرية مشكلة للعائلة</td>
+            <td><span class="meal-price">250,000 ل.س</span></td>
+            <td>
+              <button class="btn-details" id="btn-SF-007" onclick="toggleDetails('SF-007')">إظهار التفاصيل</button>
+            </td>
+          </tr>
+          <!-- تفاصيل وجبة 7 -->
+          <tr class="meal-details-row" id="details-SF-007">
+            <td colspan="6">
+              <div class="meal-details-content">
+                <div class="meal-details-grid">
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🍽️ الوجبة:</span>
+                    <span class="meal-detail-value">مأكولات بحرية مشكلة للعائلة</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">👨‍🍳 المطبخ:</span>
+                    <span class="meal-detail-value">البحر الأزرق المميز</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">🏷️ تصنيف الطعام:</span>
+                    <span class="meal-detail-value">طبق عائلي مشكل</span>
+                  </div>
+                  <div class="meal-detail-item">
+                    <span class="meal-detail-label">⏱️ وقت التحضير:</span>
+                    <span class="meal-detail-value">75 دقيقة</span>
+                  </div>
+                </div>
+                <div style="margin-top:15px;">
+                  <div class="meal-detail-label">🛒 المحتويات:</div>
+                  <ul class="ingredients-list">
+                    <li>سمك بوري مشوي كامل</li>
+                    <li>جمبري كبير بالثوم والزبدة</li>
+                    <li>حبار مقلي</li>
+                    <li>أرز بالزعفران والبهارات البحرية</li>
+                    <li>سلطة خضراء طازجة</li>
+                    <li>ثلاث صلصات مختلفة (طرطور، حارة، ليمون)</li>
+                    <li>خبز مشوي وليمون</li>
+                    <li>مشروب غازي لكل فرد</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- زر المتابعة -->
+    <div style="text-align:center; margin-top:35px;">
+      <button class="btn btn-primary" id="btn-continue" style="font-size:1.1rem; padding:15px 40px;">
+        🛒 متابعة وإتمام الطلب
+      </button>
+      <p style="margin-top:12px; color:#888; font-size:0.9rem;">يرجى اختيار الوجبات المطلوبة ثم الضغط على متابعة</p>
+    </div>
+
+    <!-- ===== قسم الفورم ===== -->
+    <div id="order-form-section">
+      <div class="form-title">
+        <span style="font-size:1.8rem;">📋</span>
+        <div>
+          <h3 style="color:#c0392b; margin:0;">نموذج تقديم الطلب</h3>
+          <p style="color:#888; font-size:0.9rem; margin:0;">يرجى تعبئة المعلومات المطلوبة أدناه</p>
+        </div>
+      </div>
+
+      <!-- معاينة الوجبات المختارة -->
+      <div id="selected-meals-preview"></div>
+
+      <form id="order-form" novalidate>
+
+        <div class="form-grid">
+
+          <!-- الاسم الكامل -->
+          <div class="form-group">
+            <label for="fullname">
+              <span class="required">*</span> الاسم الكامل لمقدم الطلب
+            </label>
+            <input type="text" id="fullname" name="fullname"
+              placeholder="أدخل اسمك الكامل بالعربية فقط"
+              maxlength="100" />
+            <div class="error-msg" id="name-error"></div>
+            <div class="success-msg" id="name-ok"></div>
+          </div>
+
+          <!-- الرقم الوطني -->
+          <div class="form-group">
+            <label for="national-id">
+              <span class="required">*</span> الرقم الوطني (11 خانة)
+            </label>
+            <input type="text" id="national-id" name="national-id"
+              placeholder="مثال: 01234567890"
+              maxlength="11" inputmode="numeric" />
+            <div style="font-size:0.8rem; color:#888; margin-top:4px;">
+              الخانتان الأوليان: رمز المحافظة (01-14)
+            </div>
+            <div class="error-msg" id="nid-error"></div>
+            <div class="success-msg" id="nid-ok"></div>
+          </div>
+
+          <!-- تاريخ الميلاد -->
+          <div class="form-group">
+            <label for="birthdate">تاريخ الولادة (dd-mm-yyyy)</label>
+            <input type="text" id="birthdate" name="birthdate"
+              placeholder="مثال: 15-06-1995" maxlength="10" />
+            <div style="font-size:0.8rem; color:#888; margin-top:4px;">
+              الشكل المطلوب: dd-mm-yyyy
+            </div>
+            <div class="error-msg" id="bd-error"></div>
+            <div class="success-msg" id="bd-ok"></div>
+          </div>
+
+          <!-- رقم الموبايل -->
+          <div class="form-group">
+            <label for="mobile">رقم الموبايل (Syriatel / MTN)</label>
+            <input type="tel" id="mobile" name="mobile"
+              placeholder="مثال: 0911234567"
+              maxlength="10" inputmode="tel" />
+            <div style="font-size:0.8rem; color:#888; margin-top:4px;">
+              10 أرقام تبدأ بـ 09
+            </div>
+            <div class="error-msg" id="mob-error"></div>
+            <div class="success-msg" id="mob-ok"></div>
+          </div>
+
+          <!-- البريد الإلكتروني -->
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="email">البريد الإلكتروني (الإيميل)</label>
+            <input type="email" id="email" name="email"
+              placeholder="مثال: example@email.com" />
+            <div class="error-msg" id="email-error"></div>
+            <div class="success-msg" id="email-ok"></div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:25px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+          <button type="submit" class="btn btn-success" style="font-size:1.05rem; padding:14px 35px;">
+            ✅ إرسال الطلب
+          </button>
+          <button type="button" class="btn btn-outline" onclick="$('#order-form-section').removeClass('show');" style="padding:14px 25px;">
+            ❌ إلغاء
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div><!-- end .section -->
+
+  <!-- ===== مودال ملخص الطلب ===== -->
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-icon">🎉</div>
+        <h2 style="color:#27ae60;">تم استلام طلبك بنجاح!</h2>
+        <p style="color:#888;">فيما يلي تفاصيل طلبك الكاملة</p>
+      </div>
+
+      <!-- معلومات الزبون -->
+      <div style="background:#f8f9fa; border-radius:10px; padding:20px; margin-bottom:20px;">
+        <h4 style="color:#c0392b; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
+          👤 معلومات الزبون
+        </h4>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div>
+            <span style="font-weight:600; color:#555;">الاسم: </span>
+            <span id="modal-customer-name" style="color:#2c3e50;"></span>
+          </div>
+          <div>
+            <span style="font-weight:600; color:#555;">الرقم الوطني: </span>
+            <span id="modal-nid" style="color:#2c3e50;"></span>
+          </div>
+          <div>
+            <span style="font-weight:600; color:#555;">تاريخ الميلاد: </span>
+            <span id="modal-bd" style="color:#2c3e50;"></span>
+          </div>
+          <div>
+            <span style="font-weight:600; color:#555;">الموبايل: </span>
+            <span id="modal-mob" style="color:#2c3e50;"></span>
+          </div>
+          <div style="grid-column:1/-1;">
+            <span style="font-weight:600; color:#555;">الإيميل: </span>
+            <span id="modal-email" style="color:#2c3e50;"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- جدول الوجبات -->
+      <h4 style="color:#c0392b; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+        🍽️ الوجبات المطلوبة
+      </h4>
+      <div style="overflow-x:auto;">
+        <table class="order-summary-table">
+          <thead>
+            <tr>
+              <th>الرمز</th>
+              <th>اسم الوجبة</th>
+              <th>السعر</th>
+            </tr>
+          </thead>
+          <tbody id="modal-meals-rows">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- الإجماليات -->
+      <div class="total-box">
+        <div class="total-row">
+          <span>المجموع الفرعي:</span>
+          <span id="modal-subtotal" style="font-weight:700;"></span>
+        </div>
+        <div class="total-row" style="color:#f39c12;">
+          <span>خصم الضريبة (5%):</span>
+          <span id="modal-tax" style="font-weight:700;">- <span id="modal-tax-val"></span></span>
+        </div>
+        <div class="total-row final">
+          <span>💰 المبلغ النهائي بعد حسم الضريبة:</span>
+          <span id="modal-total"></span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:25px; display:flex; gap:12px; justify-content:center;">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ طباعة الطلب</button>
+        <button class="btn btn-outline" onclick="closeModal()">✖️ إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>🐟 البحر الأزرق</h4>
+        <p>مطعم متخصص في المأكولات البحرية الطازجة</p>
+        <p>جودة لا تضاهى منذ 2010</p>
+      </div>
+      <div>
+        <h4>🔗 روابط سريعة</h4>
+        <a href="home.html">الصفحة الرئيسية</a>
+        <a href="AboutUs.html">من نحن</a>
+        <a href="Meals.html">قائمة الوجبات</a>
+      </div>
+      <div>
+        <h4>📞 تواصل معنا</h4>
+        <p>📱 0911234567</p>
+        <p>📧 info@bluesea.sy</p>
+        <p>📍 دمشق، شارع الميدان</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 مطعم البحر الأزرق - جميع الحقوق محفوظة | تم التطوير بواسطة فريق CS-301</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="myFunctions.js"></script>
+</body>
+</html>

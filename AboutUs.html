@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطعم البحر الأزرق - من نحن</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- شريط ترحيبي -->
+  <div class="welcome-bar">
+    🌟 مرحباً بكم في مطعم البحر الأزرق - أشهى المأكولات البحرية الطازجة 🐟
+  </div>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo">
+        <div class="logo-icon">🐟</div>
+        <div>
+          <span class="logo-text">البحر الأزرق</span>
+          <span class="logo-sub">Blue Sea Restaurant</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="home.html">🏠 الرئيسية</a></li>
+          <li><a href="AboutUs.html" class="active">👥 من نحن</a></li>
+          <li><a href="Meals.html">🍽️ الوجبات</a></li>
+          <li><a href="home.html" class="exit-btn" onclick="exitSite(); return false;">🚪 خروج</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- هيرو الصفحة -->
+  <div class="page-hero">
+    <h1>👥 من نحن</h1>
+    <p>تعرف على مطعم البحر الأزرق وقصتنا الرائعة مع عالم المأكولات البحرية</p>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="section">
+
+    <!-- معلومات عامة -->
+    <div class="section-title">
+      <h2>🏪 معلومات عامة عن المطعم</h2>
+    </div>
+
+    <div class="info-grid">
+
+      <div class="info-box">
+        <h3>🌊 قصتنا</h3>
+        <p>
+          تأسس مطعم البحر الأزرق عام 2010 على يد الشيف الأسطورة كريم المصري، الذي حمل معه موهبة الطهو البحري المتوارثة عن أجداده الصيادين.
+          بدأت الرحلة بمطعم صغير على شاطئ البحر، ليتحول اليوم إلى واحد من أبرز مطاعم المأكولات البحرية في المنطقة.
+        </p>
+        <p style="margin-top:12px;">
+          نؤمن بأن أفضل الأطباق هي تلك التي تُعد من مكونات طازجة ومختارة بعناية، لذا نحرص على استيراد أسماكنا وثمار البحر مباشرة من الصيادين المحليين كل يوم.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <h3>🎯 رؤيتنا وأهدافنا</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon">🏆</div>
+            <span>تقديم أعلى مستويات الجودة في المأكولات البحرية الطازجة</span>
+          </li>
+          <li>
+            <div class="contact-icon">🌿</div>
+            <span>استخدام المكونات الطبيعية والصحية في جميع الأطباق</span>
+          </li>
+          <li>
+            <div class="contact-icon">😊</div>
+            <span>توفير تجربة طعام استثنائية ومميزة لكل زائر</span>
+          </li>
+          <li>
+            <div class="contact-icon">🤝</div>
+            <span>دعم الصيادين المحليين والمنتجات الوطنية</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>👨‍🍳 فريقنا</h3>
+        <p>يضم مطعم البحر الأزرق نخبة من الطهاة المتخصصين في المأكولات البحرية، الذين تدربوا في أرقى المطاعم العالمية.</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:15px;">
+          <div style="background:#fef5f5;border-radius:8px;padding:15px;text-align:center;">
+            <div style="font-size:2rem;">👨‍🍳</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-top:5px;">الشيف كريم المصري</div>
+            <div style="font-size:0.8rem;color:#888;">المؤسس والرئيس التنفيذي</div>
+          </div>
+          <div style="background:#fef5f5;border-radius:8px;padding:15px;text-align:center;">
+            <div style="font-size:2rem;">👩‍🍳</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-top:5px;">الشيف ليلى الأحمد</div>
+            <div style="font-size:0.8rem;color:#888;">رئيسة قسم المقبلات</div>
+          </div>
+          <div style="background:#fef5f5;border-radius:8px;padding:15px;text-align:center;">
+            <div style="font-size:2rem;">👨‍🍳</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-top:5px;">الشيف سامر ناصر</div>
+            <div style="font-size:0.8rem;color:#888;">متخصص في الأسماك المشوية</div>
+          </div>
+          <div style="background:#fef5f5;border-radius:8px;padding:15px;text-align:center;">
+            <div style="font-size:2rem;">👨‍🍳</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-top:5px;">الشيف فارس يوسف</div>
+            <div style="font-size:0.8rem;color:#888;">متخصص في المأكولات الشرقية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h3>📊 إنجازاتنا بالأرقام</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:10px;">
+          <div style="background:linear-gradient(135deg,#c0392b,#922b21);color:#fff;border-radius:10px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:900;">+15</div>
+            <div style="font-size:0.85rem;margin-top:5px;">سنوات خبرة</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#f39c12,#e67e22);color:#fff;border-radius:10px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:900;">+50</div>
+            <div style="font-size:0.85rem;margin-top:5px;">طبق متنوع</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#27ae60,#1e8449);color:#fff;border-radius:10px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:900;">+200</div>
+            <div style="font-size:0.85rem;margin-top:5px;">زبون يومياً</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#2980b9,#1a5276);color:#fff;border-radius:10px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:900;">4.9⭐</div>
+            <div style="font-size:0.85rem;margin-top:5px;">تقييم الزبائن</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- معلومات التواصل -->
+    <div class="section-title" style="margin-top:50px;">
+      <h2>📞 معلومات التواصل</h2>
+      <p>نسعد دائماً بتواصلكم معنا لأي استفسار أو حجز</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <h4>العنوان</h4>
+        <p>دمشق، شارع الميدان، بجانب الحديقة المركزية، بناء رقم 47</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h4>أرقام الهاتف</h4>
+        <p>
+          <strong>Syriatel:</strong> 0911234567<br/>
+          <strong>MTN:</strong> 0941234567<br/>
+          <strong>فاكس:</strong> 011-5678901
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📧</div>
+        <h4>البريد الإلكتروني</h4>
+        <p>
+          info@bluesea-restaurant.sy<br/>
+          orders@bluesea-restaurant.sy<br/>
+          support@bluesea-restaurant.sy
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🕐</div>
+        <h4>أوقات العمل</h4>
+        <p>
+          الأحد - الخميس: 10:00 - 23:00<br/>
+          الجمعة - السبت: 10:00 - 00:00<br/>
+          <span style="color:#27ae60;font-weight:700;">نفتح كل أيام الأسبوع</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📘</div>
+        <h4>وسائل التواصل الاجتماعي</h4>
+        <p>
+          Facebook: Blue Sea Restaurant<br/>
+          Instagram: @bluesea_sy<br/>
+          Twitter: @BlueSeaSY
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h4>الموقع الإلكتروني</h4>
+        <p>
+          www.bluesea-restaurant.sy<br/>
+          <span style="font-size:0.85rem;color:#888;">أو قم بزيارة رابط النشر المذكور في الصفحة الرئيسية</span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- خريطة وهمية -->
+    <div style="margin-top:40px; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12);">
+      <div style="background:linear-gradient(135deg,#e8f4f8,#d5e8f0);height:250px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:15px;">
+        <div style="font-size:3rem;">🗺️</div>
+        <h3 style="color:#2980b9;">موقعنا على الخريطة</h3>
+        <p style="color:#666;text-align:center;">دمشق، شارع الميدان، بجانب الحديقة المركزية<br/>
+          <a href="https://maps.google.com" target="_blank" style="color:#c0392b;font-weight:600;">🔗 افتح في Google Maps</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>🐟 البحر الأزرق</h4>
+        <p>مطعم متخصص في المأكولات البحرية الطازجة</p>
+        <p>جودة لا تضاهى منذ 2010</p>
+      </div>
+      <div>
+        <h4>🔗 روابط سريعة</h4>
+        <a href="home.html">الصفحة الرئيسية</a>
+        <a href="AboutUs.html">من نحن</a>
+        <a href="Meals.html">قائمة الوجبات</a>
+      </div>
+      <div>
+        <h4>📞 تواصل معنا</h4>
+        <p>📱 0911234567</p>
+        <p>📧 info@bluesea.sy</p>
+        <p>📍 دمشق، شارع الميدان</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 مطعم البحر الأزرق - جميع الحقوق محفوظة | تم التطوير بواسطة فريق CS-301</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="myFunctions.js"></script>
+</body>
+</html>
